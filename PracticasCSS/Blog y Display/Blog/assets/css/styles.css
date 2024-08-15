@@ -1,0 +1,62 @@
+body {
+    font-family: "Azeret Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;  
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-auto-rows: minmax(100px, auto);
+    column-gap: 30px;
+}
+
+header{
+    grid-column: 1/ span 3;
+    text-align: center;
+    border-bottom: 2px solid rgb(230, 227, 227);
+}
+
+nav{
+    grid-column: 1;
+    padding: 30px;
+    border-right: 2px solid rgb(218, 216, 216);
+}
+
+nav ul li {
+    text-decoration: underline;
+}
+
+article {
+    grid-column: 2;
+    padding: 30px;
+}
+article h2{
+    font-size: 56px;
+    max-width: 800px;
+}
+article img{
+    border-radius: 20px;
+    width: 100%;
+}
+
+article p {
+    margin-top: 30px;
+    line-height: 2em;
+}
+
+aside {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 30px;
+    border-left: 2px solid rgb(247, 232, 232);
+}
+
+footer{
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    text-align: center;
+    border-top: 2px solid rgb(204, 195, 195);
+    padding: 30px;
+}

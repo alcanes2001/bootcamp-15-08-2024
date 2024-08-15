@@ -1,0 +1,98 @@
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body{
+    background-color: rgba(54, 90, 247, 0.952);
+    color: white;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+form{
+    margin-top: 30px;
+}
+
+.login{
+    border-radius: 30px;
+    margin: auto;
+    height: 550px;
+    width: 400px;
+    padding: 70px;
+    background: url(https://img.lovepik.com/background/20211021/large/lovepik-blue-e-commerce-background-image_401460895.jpg);
+    background-size: cover;
+    box-shadow: 0px 30px 60px -5px black;
+}
+
+h2{
+    border-bottom: 2px solid white;
+    padding-left: 10px;
+    font-size: 28px;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+    font-weight: 350;
+    margin-left: 20px;
+}
+
+.campo-email, .campo-password {
+    width: 90%;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    background-color: rgb(255, 233, 250);
+    border: 2px solid rgb(238, 78, 139);
+    margin-top: 10px;
+    transition: all 0.5s;
+    font-size: 15px;
+}
+
+.campo-email:focus, .campo-password:focus {
+    outline: 0;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+label{
+    margin-top: 25px;
+    display: block;
+}
+
+.boton-ingresar {
+    font-size: 15px;
+    letter-spacing: 3px;
+    background-color: rgb(42, 71, 167);
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+.boton-ingresar:hover {
+    background: rgb(17, 37, 102);
+    cursor: pointer;
+}
+
+hr{
+    margin-top: 50px;
+    border: 1px solid white;
+}
+
+a{
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.sesion-activa {
+    display: inline-block;
+    margin-bottom: 25px;
+}

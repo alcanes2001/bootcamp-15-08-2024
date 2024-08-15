@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pollos Copacabana Delivery</title>
+  </head>
+  <body>
+    <header>
+      <img
+        height="100px"
+        src="https://www.la-razon.com/wp-content/uploads/2023/04/01/20/image.png"
+      />
+      <h1>Pollos Copacabana Delivery</h1>
+    </header>
+
+    <main>
+      <section>
+        <form method="POST" action="https://eolz0b8n6z4f5sw.m.pipedream.net">
+          <fieldset>
+            <legend>Datos del Cliente</legend>
+            <label for="firstName"> Nombre:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="ingresa tu nombre" />
+
+            <label for="email">Celular:</label>
+            <input type="text" name="phone" placeholder="ingresa tu Celular" id="phone"/>
+            <br />
+
+            <label for="lastname">Apellido:</label>
+            <input type="text" name="lastname" id="lastname" placeholder="ingresa tu apellido" />
+
+            <label for="email">Email:</label> 
+            <input type="email" name="email" placeholder="ingresa tu Email" id="email" />
+            <br />
+
+            <label for="lastname">Ciudad:</label>
+            <input type="text" name="city" id="city" placeholder="Ciudad" />
+
+          </fieldset>
+
+          <br />
+
+          <fieldset>
+            <label for="favorito"><b>Selecciona tu tipo de presa:</b></label>
+            <br />
+
+            <label for="cuarto2">Combo Cuarto</label>
+            <input type="radio" name="tipo_presa" value="cuarto" id="cuarto" />
+            <br />
+
+            <label for="fiesta2">Combo Fiesta</label>
+            <input type="radio" name="tipo_presa" value="fiesta" id="fiesta" />
+            <br />
+
+            <label for="trio2">Combo Trio</label>
+            <input type="radio" name="tipo_presa" value="trio" id="trio" /> <br />
+
+            <br />
+            <label for="favorito"><b>Selecciona el tamaño de las papas y del refresco:</b></label>
+            <br />
+
+            <label for="cuarto2">Pequeño</label>
+            <input type="radio" name="tamano_pizza" value="pequeno" id="pequeno" />
+            <br />
+
+            <label for="fiesta2">Mediano</label>
+            <input type="radio" name="tamano_pizza" value="mediano" id="mediano" />
+            <br />
+
+            <label for="trio2">Grande</label>
+            <input type="radio" name="tamano_pizza" value="grande" id="grande" /> <br />
+
+            <br />
+
+            <label for="favorito"><b>Selecciona Extras:</b></label>
+            <br />
+
+            <label for="cuarto2">Arroz</label>
+            <input type="checkbox" name="extras" value="arroz" id="arroz" />
+            <br />
+
+            <label for="fiesta2">Ensalada</label>
+            <input type="checkbox" name="extras" value="ensalada" id="ensalada" />
+            <br />
+
+            <label for="trio2">Postre</label>
+            <input type="checkbox" name="extras" value="postre" id="postre" />
+            <br />
+          </fieldset>
+
+          <br />
+
+          <label for="fecha">Selecciona la hora de entrega</label>
+          <input type="time" name="fecha" id="fecha" />
+
+          <br />
+          <textarea name="mensaje" rows="5" cols="39">envianos un comentario sobre el pedido..
+          </textarea>
+
+          <br />
+          <input type="submit" value="Enviar" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

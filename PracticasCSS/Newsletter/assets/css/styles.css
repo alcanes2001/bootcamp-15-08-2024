@@ -1,0 +1,50 @@
+* {
+    font-family: "Azeret Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;  
+}
+
+.article{
+    background-color: rgb(223, 255, 255);
+    margin: 10px;
+    padding: 1cm;
+}
+
+.newslatter{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    color: rgb(213, 255, 241);
+    padding: 20px;
+    width: 800px;
+    height: 250px;
+    background: url(https://thumbs.dreamstime.com/b/newsletter-email-icon-special-blue-banner-background-newsletter-email-icon-isolated-special-blue-banner-background-abstract-123107778.jpg);
+    border: 5px solid rgb(109, 212, 230);
+    background-size: cover;
+}
+
+#enviardato{
+    cursor: pointer;
+    background-color: rgb(54, 252, 242);
+    padding: 7px 20px;
+    margin-top: 10px;
+    border: none;
+    font-size: 15px;
+}
+.caja{
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+}
+
+.position-button{
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
