@@ -1,0 +1,2006 @@
+[33mcommit 65a1851738ae9e8bb3d433cc9f4ecd216986b743[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Nestor Alvarez <alcanes2001@gmail.com>
+Date:   Thu Aug 15 16:41:52 2024 -0400
+
+    version 15-agosto
+
+[1mdiff --git a/PracticasCSS/Blog y Display/Blog/assets/css/styles.css b/PracticasCSS/Blog y Display/Blog/assets/css/styles.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b381573[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Blog y Display/Blog/assets/css/styles.css[m	
+[36m@@ -0,0 +1,62 @@[m
+[32m+[m[32mbody {[m
+[32m+[m[32m    font-family: "Azeret Mono", monospace;[m
+[32m+[m[32m    font-optical-sizing: auto;[m
+[32m+[m[32m    font-weight: 700;[m
+[32m+[m[32m    font-style: normal;[m[41m  [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.grid-container{[m
+[32m+[m[32m    display: grid;[m
+[32m+[m[32m    grid-template-columns: 25% 50% 25%;[m
+[32m+[m[32m    grid-auto-rows: minmax(100px, auto);[m
+[32m+[m[32m    column-gap: 30px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mheader{[m
+[32m+[m[32m    grid-column: 1/ span 3;[m
+[32m+[m[32m    text-align: center;[m
+[32m+[m[32m    border-bottom: 2px solid rgb(230, 227, 227);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mnav{[m
+[32m+[m[32m    grid-column: 1;[m
+[32m+[m[32m    padding: 30px;[m
+[32m+[m[32m    border-right: 2px solid rgb(218, 216, 216);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mnav ul li {[m
+[32m+[m[32m    text-decoration: underline;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32marticle {[m
+[32m+[m[32m    grid-column: 2;[m
+[32m+[m[32m    padding: 30px;[m
+[32m+[m[32m}[m
+[32m+[m[32marticle h2{[m
+[32m+[m[32m    font-size: 56px;[m
+[32m+[m[32m    max-width: 800px;[m
+[32m+[m[32m}[m
+[32m+[m[32marticle img{[m
+[32m+[m[32m    border-radius: 20px;[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32marticle p {[m
+[32m+[m[32m    margin-top: 30px;[m
+[32m+[m[32m    line-height: 2em;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32maside {[m
+[32m+[m[32m    grid-column: 3;[m
+[32m+[m[32m    grid-row: 2;[m
+[32m+[m[32m    padding: 30px;[m
+[32m+[m[32m    border-left: 2px solid rgb(247, 232, 232);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mfooter{[m
+[32m+[m[32m    grid-column: 1 / span 3;[m
+[32m+[m[32m    grid-row: 3;[m
+[32m+[m[32m    text-align: center;[m
+[32m+[m[32m    border-top: 2px solid rgb(204, 195, 195);[m
+[32m+[m[32m    padding: 30px;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Blog y Display/Blog/index.html b/PracticasCSS/Blog y Display/Blog/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..af5579d[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Blog y Display/Blog/index.html[m	
+[36m@@ -0,0 +1,56 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>[m
+[32m+[m[32m    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Gilda+Display&display=swap" rel="stylesheet">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />[m
+[32m+[m[32m    <link rel="stylesheet" href="assets/css/styles.css">[m
+[32m+[m[32m    <title>Blog Noticias Gamer</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <div class="grid-container">[m
+[32m+[m[32m        <header>[m
+[32m+[m[32m            <h1>Blog Noticias Gamer</h1>[m
+[32m+[m[32m        </header>[m
+[32m+[m
+[32m+[m[32m        <nav>[m
+[32m+[m[32m            <p>Categorias</p>[m
+[32m+[m[32m            <ul>[m
+[32m+[m[32m                <li>Film & Cinema</li>[m
+[32m+[m[32m                <li>Book & Read</li>[m
+[32m+[m[32m                <li>Gamer & Control</li>[m
+[32m+[m[32m                <li>Food & Drink</li>[m
+[32m+[m[32m                <li>News & News</li>[m
+[32m+[m[32m            </ul>[m
+[32m+[m[32m        </nav>[m
+[32m+[m
+[32m+[m[32m        <article>[m
+[32m+[m[32m            <h2>Los 5 mejores juegos de aventuras de mundo abierto</h2>[m
+[32m+[m[32m            <img src="https://www.latribunadealbacete.es/media/IMG/2024/637311C9-0FA8-A03C-9C2F85D97ADC899A.JPG" alt="">[m
+[32m+[m[32m            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, debitis perferendis ab cum, delectus quod ut molestias qui doloremque animi in dolor sint excepturi quia praesentium reprehenderit et. A, inventore!</p>[m
+[32m+[m[32m            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem soluta corrupti totam, minima velit cum mollitia nisi consequatur. Dolore libero, perspiciatis optio magni distinctio nemo consectetur itaque. Ab, architecto quam.</p>[m
+[32m+[m[32m            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, earum. Ab sit aspernatur delectus illo dolores error ipsa, distinctio quia reprehenderit sint deleniti earum? Architecto at iste dolorem quasi! Eligendi?</p>[m
+[32m+[m[32m            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum in reprehenderit magnam exercitationem, ipsa provident eos atque quam velit error molestias harum aperiam veniam unde perspiciatis voluptatum dolore quia obcaecati?</p>[m
+[32m+[m[32m        </article>[m
+[32m+[m
+[32m+[m[32m        <aside>[m
+[32m+[m[32m            <ul>[m
+[32m+[m[32m                <li>[m
+[32m+[m[32m                    <p><strong>Publicado el: </strong> Octubre 15, 2023</p>[m
+[32m+[m[32m                </li>[m
+[32m+[m[32m                <li>[m
+[32m+[m[32m                    <p><strong>En la categoria: </strong> Gamer</p>[m
+[32m+[m[32m                </li>[m
+[32m+[m[32m                <li>[m
+[32m+[m[32m                    <p><Strong>Escrito por: </Strong> Nestor</p>[m
+[32m+[m[32m                </li>[m
+[32m+[m[32m            </ul>[m
+[32m+[m[32m        </aside>[m
+[32m+[m[32m        <footer>[m
+[32m+[m[32m            <p>Copyright @NestorBlogGamer 2024</p>[m
+[32m+[m[32m        </footer>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Blog y Display/DisplayGrid/assets/css/style.css b/PracticasCSS/Blog y Display/DisplayGrid/assets/css/style.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2ef5d41[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Blog y Display/DisplayGrid/assets/css/style.css[m	
+[36m@@ -0,0 +1,61 @@[m
+[32m+[m[32m.container-grid{[m
+[32m+[m[32m    background: black;[m
+[32m+[m[32m    margin: auto;[m
+[32m+[m[32m    width: 500px;[m
+[32m+[m[32m    display: grid;[m
+[32m+[m[32m    grid-template-columns: repeat(4, 1fr);[m
+[32m+[m[32m    grid-template-rows: repeat(5, 100px);[m
+[32m+[m[32m    gap: 1px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.caja {[m
+[32m+[m[32m    border-radius: 10px;[m
+[32m+[m[32m    margin: 5px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.caja1 {[m
+[32m+[m[32m    background: rgb(3, 83, 3);[m
+[32m+[m[32m    grid-column: 1 / 4 span;[m
+[32m+[m[32m    grid-row: 1;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja2{[m
+[32m+[m[32m    background: rgb(197, 236, 19);[m
+[32m+[m[32m    grid-column: 1 / span 2;[m
+[32m+[m[32m    grid-row: 2;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.caja3{[m
+[32m+[m[32m    background: rgb(125, 205, 252);[m
+[32m+[m[32m    grid-column: 3 / span 2;[m
+[32m+[m[32m    grid-row: 2;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja4{[m
+[32m+[m[32m    background: rgb(81, 0, 128);[m
+[32m+[m[32m    grid-column: 1 / span 2;[m
+[32m+[m[32m    grid-row: 3 / span 3;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja5{[m
+[32m+[m[32m    background: grey;[m
+[32m+[m[32m    grid-column: 3 / span 2;[m
+[32m+[m[32m    grid-row: 3;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja6{[m
+[32m+[m[32m    background: blue;[m
+[32m+[m[32m    grid-column: 3 / span 1;[m
+[32m+[m[32m    grid-row: 4;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja7{[m
+[32m+[m[32m    background: orange;[m
+[32m+[m[32m    grid-column: 4;[m
+[32m+[m[32m    grid-row: 4;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja8{[m
+[32m+[m[32m    background: lightgrey;[m
+[32m+[m[32m    grid-column: 3;[m
+[32m+[m[32m    grid-row: 5;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja9{[m
+[32m+[m[32m    background: red;[m
+[32m+[m[32m    grid-column: 4;[m
+[32m+[m[32m    grid-row: 5;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Blog y Display/DisplayGrid/index.html b/PracticasCSS/Blog y Display/DisplayGrid/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bb02051[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Blog y Display/DisplayGrid/index.html[m	
+[36m@@ -0,0 +1,24 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Display Grid - Design</title>[m
+[32m+[m[32m    <link rel="stylesheet" href="assets/css/style.css">[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <h1>Display Grid Design</h1>[m
+[32m+[m
+[32m+[m[32m    <div class="container-grid">[m
+[32m+[m[32m        <div class="caja caja1">.</div>[m
+[32m+[m[32m        <div class="caja caja2">.</div>[m
+[32m+[m[32m        <div class="caja caja3">.</div>[m
+[32m+[m[32m        <div class="caja caja4">.</div>[m
+[32m+[m[32m        <div class="caja caja5">.</div>[m
+[32m+[m[32m        <div class="caja caja6">.</div>[m
+[32m+[m[32m        <div class="caja caja7">.</div>[m
+[32m+[m[32m        <div class="caja caja8">.</div>[m
+[32m+[m[32m        <div class="caja caja9">.</div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Catalogo/index.html b/PracticasCSS/Catalogo/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..924014d[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Catalogo/index.html[m
+[36m@@ -0,0 +1,85 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Catalogo</title>[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.googleapis.com">[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>[m
+[32m+[m[32m    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">[m
+[32m+[m[32m    <link rel="stylesheet" href="styles.css">[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body bgcolor="pink">[m
+[32m+[m[32m    <div align="center">[m
+[32m+[m[32m    <header>[m
+[32m+[m[32m        <h1>Tienda Deportiva</h1>[m
+[32m+[m[32m        <img height="70" src="https://fairplaybo.vtexassets.com/assets/vtex/assets-builder/fairplaybo.fairplay-theme/1.0.5/imgs/logo-fairplaybo-mobile___67b3f642aee53f33f92b6aa0f5037144.png" alt="">[m
+[32m+[m[32m    </header>[m
+[32m+[m[32m    <main>[m
+[32m+[m[41m        [m
+[32m+[m[32m        <section>[m
+[32m+[m[32m            <h2>Catalogo de Venta</h2>[m
+[32m+[m[32m            <table cellpadding="5" bgcolor="white" border="1" cellspacing="5">[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <th>Articulo</th>[m
+[32m+[m[32m                    <th>Precio</th>[m
+[32m+[m[32m                    <th>Producto</th>[m
+[32m+[m[32m                    <th>Comprar</th>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <td>UA ZAP Charged Breeze</td>[m
+[32m+[m[32m                    <td>Bs.390</td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <img height="200px" src="https://fairplaybo.vtexassets.com/arquivos/ids/161668-300-auto?v=638094768900230000&width=300&height=auto&aspect=true" alt="">[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <button><i class="bi bi-cart-check"></i> Agregar al Carrito</button>[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <td>UA Polera M Sportstyle</td>[m
+[32m+[m[32m                    <td>Bs.150</td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <img height="200px" src="https://fairplaybo.vtexassets.com/arquivos/ids/414338-1200-auto?v=638557211172400000&width=1200&height=auto&aspect=true" alt="">[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <button><i class="bi bi-cart-check"></i> Agregar al Carrito</button>[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <td>Chuck Taylor ALL STAR Platform HI</td>[m
+[32m+[m[32m                    <td>Bs.780</td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <img height="200px" src="https://fairplaybo.vtexassets.com/arquivos/ids/303272-1200-auto?v=638322050798570000&width=1200&height=auto&aspect=true" alt="">[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <button><i class="bi bi-cart-check"></i> Agregar al Carrito</button>[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m            </table>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        <section>[m
+[32m+[m[32m            <hr>[m
+[32m+[m[32m            <h2>Visitanos en nuestra tienda</h2>[m
+[32m+[m[32m            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.165983620867!2d-68.07917283856817!3d-16.54186830062628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f213a1eb083d9%3A0xa51f9a423b88d0c5!2sFair%20Play-%20yuth!5e0!3m2!1ses!2sbo!4v1721926516796!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>[m
+[32m+[m[32m        </section>[m
+[32m+[m[41m    [m
+[32m+[m[32m    </main>[m
+[32m+[m[32m</div>[m
+[32m+[m[32m    <footer>[m
+[32m+[m[32m        <ul>[m
+[32m+[m[32m            <li>[m
+[32m+[m[32m                Email: <a href="mailto:alcanes2001@gmail.com"> alcanes2001@gmail.com</a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li>[m
+[32m+[m[32m                Whatsapp: <a href="tlf:60630730">60630730</a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m        <p>© Fair Play 2022. Todos los derechos reservados</p>[m
+[32m+[m[32m    </footer>[m
+[32m+[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Catalogo/styles.css b/PracticasCSS/Catalogo/styles.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e5b8d87[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Catalogo/styles.css[m
+[36m@@ -0,0 +1,41 @@[m
+[32m+[m[32m* {[m
+[32m+[m[32m    font-family: "Gilda Display", serif;[m
+[32m+[m[32m    font-weight: 400;[m
+[32m+[m[32m    font-style: normal;[m
+[32m+[m[32m  }[m
+[32m+[m[41m  [m
+[32m+[m[32mbody{[m
+[32m+[m[32m color: rgb(8, 10, 22)[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mtable{[m
+[32m+[m[32m  color: rgb(124, 6, 61);[m
+[32m+[m[32m  border: 2px;[m
+[32m+[m[32m  border-color: rgb(138, 10, 59);[m
+[32m+[m[41m  [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mtbody{[m
+[32m+[m[32m  background-color: rgb(253, 241, 231);[m
+[32m+[m[32m}[m
+[32m+[m[32mimg{[m
+[32m+[m[32m  border-radius: 20px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbutton{[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m  padding: 10px;[m
+[32m+[m[32m  background: #f2709c;  /* fallback for old browsers */[m
+[32m+[m[32m  background: -webkit-linear-gradient(to right, #ff9472, #f2709c);  /* Chrome 10-25, Safari 5.1-6 */[m
+[32m+[m[32m  background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */[m
+[32m+[m[32m  color: rgb(252, 238, 238);[m
+[32m+[m[32m  border: none;[m
+[32m+[m[32m  border-radius: 4px;[m
+[32m+[m[32m}[m
+[32m+[m[32m.bi-cart-check{[m
+[32m+[m[32m  color: rgb(41, 17, 54)[m
+[32m+[m[32m}[m
+[32m+[m[32miframe{[m
+[32m+[m[32m  width: 50%;[m
+[32m+[m[32m  border-radius: 20px;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/CatalogoResponsive/assets/css/styles.css b/PracticasCSS/CatalogoResponsive/assets/css/styles.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5588b31[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/CatalogoResponsive/assets/css/styles.css[m
+[36m@@ -0,0 +1,107 @@[m
+[32m+[m[32m@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Gilda+Display&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');[m
+[32m+[m
+[32m+[m[32m* {[m
+[32m+[m[32m    font-family: "Roboto", sans-serif;[m
+[32m+[m[32m    font-weight: 500;[m
+[32m+[m[32m    font-style: normal;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbody{[m
+[32m+[m[32m    background-color: rgb(250, 238, 255);[m
+[32m+[m[32m}[m
+[32m+[m[32m.container-productos {[m
+[32m+[m[32m    display: flex;[m
+[32m+[m[32m    flex-wrap: wrap;[m
+[32m+[m[32m    justify-content: center;[m[41m  [m
+[32m+[m[32m    gap: 10px;[m[41m  [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.producto{[m
+[32m+[m[32m    /*border: 3px solid black;*/[m
+[32m+[m[32m    background-color: white;[m
+[32m+[m[32m    width: 25%;[m
+[32m+[m[32m    max-height: 375px;[m
+[32m+[m[32m    margin: 1px;[m
+[32m+[m[32m    padding: 7px;[m
+[32m+[m[32m    padding-bottom: 80px;[m
+[32m+[m[32m    border-radius: 5px;[m
+[32m+[m[32m    box-shadow: 1px 1px solid gray;[m
+[32m+[m[32m    max-width: 290px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m.img-product {[m
+[32m+[m[32m    width: 90%;[m
+[32m+[m[32m    max-height: 250px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-product, .title-price, .title-regular {[m
+[32m+[m[32m    margin: 0;[m
+[32m+[m[32m    padding: 5px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.title-product{[m
+[32m+[m[32m    font-size: 20px;[m
+[32m+[m[32m}[m
+[32m+[m[32m.title-price {[m
+[32m+[m[32m    color: rgb(0, 110, 255);[m
+[32m+[m[32m    font-size: 18px;[m
+[32m+[m[32m}[m
+[32m+[m[32m.title-regular{[m
+[32m+[m[32m    color: red;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.bi-star-fill{[m
+[32m+[m[32m    color: yellow !important;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.btn-novedad{[m
+[32m+[m[32m    width: 25%;[m
+[32m+[m[32m    background-color: rgb(217, 250, 225);[m
+[32m+[m[32m    padding: 3px 3px 3px 3px;[m
+[32m+[m[32m    text-align: center;[m
+[32m+[m[32m    font-size: 10px;[m
+[32m+[m[32m    color: rgb(18, 194, 56);[m
+[32m+[m[32m    border: 2;[m
+[32m+[m[32m    border-color: rgb(20, 197, 20);[m
+[32m+[m[32m    border-radius: 5px;[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m[32m.btn-regalo{[m
+[32m+[m[32m    width: 25%;[m
+[32m+[m[32m    background-color: rgb(250, 241, 217);[m
+[32m+[m[32m    padding: 3px 3px 3px 3px;[m
+[32m+[m[32m    text-align: center;[m
+[32m+[m[32m    font-size: 10px;[m
+[32m+[m[32m    color: rgb(238, 132, 11);[m
+[32m+[m[32m    border: 2;[m
+[32m+[m[32m    border-color: rgb(248, 136, 8);[m
+[32m+[m[32m    border-radius: 5px;[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m[32m.btn-comprar {[m
+[32m+[m[32m    margin-top: 15px;[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m    background-color: rgb(238, 134, 36);[m
+[32m+[m[32m    padding: 10px 20px;[m
+[32m+[m[32m    color: white;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    border-radius: 20px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m@media screen and (max-width: 500px){[m
+[32m+[m[32m    .producto{[m
+[32m+[m[32m        width: 50%;[m
+[32m+[m[32m        max-width: 180px;[m
+[32m+[m[32m        padding: 3px;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m@media screen and (max-width: 398px){[m
+[32m+[m[32m    .producto{[m
+[32m+[m[32m        width: 50%;[m
+[32m+[m[32m        max-width: 150px;[m
+[32m+[m[32m        padding: 3px;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/CatalogoResponsive/index.html b/PracticasCSS/CatalogoResponsive/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5386d82[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/CatalogoResponsive/index.html[m
+[36m@@ -0,0 +1,187 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Catalogo Responsive Editado</title>[m
+[32m+[m[32m    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">[m
+[32m+[m[32m    <link rel="stylesheet" href="assets/css/styles.css">[m
+[32m+[m[41m    [m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <header>[m
+[32m+[m[32m        Catalogo de Productos XIAOMI[m
+[32m+[m[32m    </header>[m
+[32m+[m[32m    <main>[m
+[32m+[m[32m        <div class="container-productos">[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="producto">[m
+[32m+[m[32m                <button class="btn-novedad">Novedad</button>[m
+[32m+[m[32m                <button class="btn-regalo">Regalo</button>[m
+[32m+[m[32m                <img class="img-product" src="https://i05.appmifile.com/632_item_es/25/07/2024/d0781deb0ceb42347d2a9a6595102f96.png?thumb=1&w=220&f=webp&q=85" alt="">[m
+[32m+[m[32m                <h4 class="title-product">Redmi Pad Pro 5G</h4>[m
+[32m+[m[32m                <h4 class="title-price">$379,99</h4>[m
+[32m+[m[32m                <h4 class="title-regular"> <del>$329,99</del> </h4>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star-fill"></i>[m
+[32m+[m[32m                    <i class="bi bi-star"></i>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <button class="btn-comprar">Comprar</button>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </main>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Home-Twitter/assets/css/styles.css b/PracticasCSS/Home-Twitter/assets/css/styles.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..42d4368[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Home-Twitter/assets/css/styles.css[m
+[36m@@ -0,0 +1,89 @@[m
+[32m+[m[32m.tempora-tweets {[m
+[32m+[m[32m    height: 900px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.btn-twitter {[m
+[32m+[m[32m    background-color: rgb(29,155,240);[m
+[32m+[m[32m    padding: 7px 50px;[m
+[32m+[m[32m    border-radius: 30px;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    color: white;[m
+[32m+[m[32m    box-shadow: rgb(0 0 0/ 8%) 0px 8px 28px;[m
+[32m+[m[32m    font-size: 18px;[m
+[32m+[m[32m    font-weight: bold;[m
+[32m+[m[32m    width: 80%;[m
+[32m+[m[32m    height: 50px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.btn-twitter:hover {[m
+[32m+[m[32m    background-color: rgb(55, 144, 203);[m
+[32m+[m[32m    transition: all 0.3s;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mul li a:hover {[m
+[32m+[m[32m    background-color: rgba(172,167,167,0.177);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mul li a {[m
+[32m+[m[32m    border-radius: 30px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#search {[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    background-color: rgba(212,211,211,0.177);[m
+[32m+[m[32m    padding: 15px 50px;[m
+[32m+[m[32m    border-radius: 30px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.inner-addon {[m[41m [m
+[32m+[m[32m    position: relative;[m[41m [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/* style icon */[m
+[32m+[m[32m.inner-addon .bi {[m
+[32m+[m[32m    position: absolute;[m
+[32m+[m[32m    padding: 10px;[m
+[32m+[m[32m    pointer-events: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m/* align icon */[m
+[32m+[m[32m.left-addon .bi  { left:  0px;}[m
+[32m+[m[32m.right-addon .bi { right: 0px;}[m
+[32m+[m
+[32m+[m[32m/* add padding  */[m
+[32m+[m[32m.left-addon input  { padding-left:  30px; }[m
+[32m+[m[32m.right-addon input { padding-right: 30px; }[m
+[32m+[m
+[32m+[m[32mspan {[m
+[32m+[m[32m    font-size: 14px;[m
+[32m+[m[32m    color: gray;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.btn-twitter-small {[m
+[32m+[m[32m    float: right;[m
+[32m+[m[32m    cursor: none;[m
+[32m+[m[32m    background-color: rgb(145,197,232);[m
+[32m+[m[32m    padding: 8px 20px;[m
+[32m+[m[32m    border-radius: 30px;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    color: white;[m
+[32m+[m[32m    box-shadow: rgb(0 0 0/ 8%) 0px 8px 28px;[m
+[32m+[m[32m    font-size: 15px;[m
+[32m+[m[32m    font-weight: bold;[m
+[32m+[m[32m    /* width: 80%;[m
+[32m+[m[32m    height: 50px; */[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mhr {[m
+[32m+[m[32m    opacity: .15;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.more-tweets:hover {[m
+[32m+[m[32m    background-color: rgba(172,167,167,0.135);[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.tweet:hover {[m
+[32m+[m[32m    background-color: rgba(212,211,211,0.177);[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Home-Twitter/index.html b/PracticasCSS/Home-Twitter/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..041e619[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Home-Twitter/index.html[m
+[36m@@ -0,0 +1,354 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <meta charset="UTF-8">[m
+[32m+[m[32m  <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m  <title>Home Twitter</title>[m
+[32m+[m[32m  <link rel="stylesheet" href="assets/css/styles.css">[m
+[32m+[m[32m  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"[m
+[32m+[m[32m    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">[m
+[32m+[m[32m  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body>[m
+[32m+[m[32m  <main>[m
+[32m+[m[32m    <div class="container">[m
+[32m+[m[32m      <div class="row">[m
+[32m+[m[32m        <div class="col-12 bg-white">[m
+[32m+[m[32m          <nav class="navbar bg-white">[m
+[32m+[m[32m            <div class="container">[m
+[32m+[m[32m              <a class="navbar-brand" href="#">[m
+[32m+[m[32m                <i class="bi bi-twitter-x fs-1"></i>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m                <div class="me-5">[m
+[32m+[m[32m                  <a class="navbar-brand">Inicio</a>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                  <form class="d-flex inner-addon left-addon" role="search">[m
+[32m+[m[32m                    <i class="bi bi-search fs-5 p-2"></i>[m
+[32m+[m[32m                    <input id="search" class="form-control me-2 search-twitter" type="search" placeholder="Buscar" aria-label="Search">[m
+[32m+[m[32m                  </form>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m          </nav>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      <div class="row">[m
+[32m+[m[32m        <div class="col-3 bg-white">[m
+[32m+[m[32m          <ul class="nav flex-column">[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3" aria-current="page" href="#">[m
+[32m+[m[32m                <i class="bi bi-house-door fs-3 me-3"></i>[m
+[32m+[m[32m                Inicio[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-search fs-3 me-3"></i>[m
+[32m+[m[32m                Explorar[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-bell fs-3 me-3"></i>[m
+[32m+[m[32m                Notificaciones[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-envelope fs-3 me-3"></i>[m
+[32m+[m[32m                Mensajes[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-card-list fs-3 me-3"></i>[m
+[32m+[m[32m                Listas[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-bookmark fs-3 me-3"></i>[m
+[32m+[m[32m                Guardados[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-people fs-3  me-3"></i>[m
+[32m+[m[32m                Comunidades[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-person fs-3 me-3"></i>[m
+[32m+[m[32m                Perfil[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link text-dark fs-5 fw-bold me-3" href="#">[m
+[32m+[m[32m                <i class="bi bi-filter-circle fs-3 me-3"></i>[m
+[32m+[m[32m                Mas opciones[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m          </ul>[m
+[32m+[m[32m          <div class="mt-4">[m
+[32m+[m[32m            <button type="button" class="btn-twitter">Twittear</button>[m
+[32m+[m[32m          </div>[m
+[32m+[m[41m          [m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <div class="col-6 bg-white mb-5 tempora-tweets">[m
+[32m+[m[32m          <div class="row">[m
+[32m+[m[32m            <div class="col-2">[m
+[32m+[m[32m              <img class="rounded-circle" width="60px" height="60px" src="https://pbs.twimg.com/profile_images/1811791171745968128/2kHQTbWD_400x400.jpg" alt="">[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div class="col-10">[m
+[32m+[m[32m              <div class="form-floating">[m
+[32m+[m[32m                <textarea class="form-control border-0 fs-4" placeholder="Leave a comment here" id="floatingTextarea2"[m
+[32m+[m[32m                  style="height: 100px"></textarea>[m
+[32m+[m[32m                <label for="floatingTextarea2">¿Que esta pasando?</label>[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m              <span class="text-primary fw-bold">[m
+[32m+[m[32m                <i class="bi bi-globe-americas me-3 text-primary"></i>[m
+[32m+[m[32m                Cualquier persona puede responder[m
+[32m+[m[32m              </span>[m
+[32m+[m[32m              <hr>[m
+[32m+[m[32m              <div class="mt-2">[m
+[32m+[m[32m                <span><i class="bi bi-card-image text-primary fs-4 m-2"></i></span>[m
+[32m+[m[32m                <span><i class="bi bi-filetype-gif text-primary fs-4 m-2"></i></span>[m
+[32m+[m[32m                <span><i class="bi bi-bar-chart text-primary fs-4 m-2"></i></span>[m
+[32m+[m[32m                <span><i class="bi bi-emoji-smile text-primary fs-4 m-2"></i></span>[m
+[32m+[m[32m                <span><i class="bi bi-calendar text-primary fs-4 m-2"></i></span>[m
+[32m+[m[32m                <span><i class="bi bi-geo-alt text-primary fs-4 m-2"></i></span>[m
+[32m+[m[32m                <button type="button" class="btn-twitter-small">Twittear</button>[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m          <div class="text-center p-3 more-tweets">[m
+[32m+[m[32m            <span class="text-primary fw-bold">Mostrar 45 Tweets</span>[m
+[32m+[m[32m          </div>[m
+[32m+[m[41m          [m
+[32m+[m[32m          <div class="container">[m
+[32m+[m[32m            <div class="card m-3 border-0 rounded-3 text-bg-white w-100 tweet" >[m
+[32m+[m[32m                <div class="card-body m-2">[m
+[32m+[m[32m                    <div class="row">[m
+[32m+[m[32m                        <div class="col-2">[m
+[32m+[m[32m                            <img class="rounded-circle" height="50px" width="45px" src="https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/MESSI.jpg" alt="">[m
+[32m+[m[32m                        </div>[m
+[32m+[m[41m    [m
+[32m+[m[32m                        <div class="col-9 ms-1">[m
+[32m+[m[32m                            <h6 class="mb-0">Lionel Messi[m
+[32m+[m[32m                                <i class="bi bi-patch-check-fill text-primary ms-2"></i>[m
+[32m+[m[32m                                <i class="bi bi-twitter-x float-end text-black fs-1"></i>[m
+[32m+[m[32m                            </h6>[m
+[32m+[m[32m                            <p class="text-muted">@LionelMessi</p>[m
+[32m+[m[41m    [m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[41m    [m
+[32m+[m[32m                    <div class="row">[m
+[32m+[m[32m                        <div class="col-12">[m
+[32m+[m[32m                            <p class="text-black fs-4 mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorum laboriosam incidunt nam quibusdam qui corrupti eligendi repellat, officia delectus velit nisi provident voluptatem voluptates nesciunt natus est consequatur ipsam. </p>[m
+[32m+[m[32m                            <p class="text-primary fs-4 mb-1">#TheGOAT</p>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[41m    [m
+[32m+[m[41m    [m
+[32m+[m[32m                    <div class="row">[m
+[32m+[m[32m                        <p class="text-muted fs-6">9:30pm Aug, 2024</p>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[41m    [m
+[32m+[m[32m                    <div class="row">[m
+[32m+[m[32m                        <div class="col-3">[m
+[32m+[m[32m                            <a href="#"><i class="bi bi-chat fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                        <div class="col-3">[m
+[32m+[m[32m                            <a href="#"><i class="bi bi-share fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                        <div class="col-3">[m
+[32m+[m[32m                            <a href="#"><i class="bi bi-heart fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                        <div class="col-3">[m
+[32m+[m[32m                            <a href="#"><i class="bi bi-arrow-bar-up fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                        </div>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m              </div>[m
+[32m+[m[41m    [m
+[32m+[m[32m        </div>[m
+[32m+[m
+[32m+[m[32m        <div class="container">[m
+[32m+[m[32m          <div class="card m-3 border-0 rounded-3 text-bg-white w-100 tweet" >[m
+[32m+[m[32m              <div class="card-body m-2">[m
+[32m+[m[32m                  <div class="row">[m
+[32m+[m[32m                      <div class="col-2">[m
+[32m+[m[32m                          <img class="rounded-circle" height="50px" width="45px" src="https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/MESSI.jpg" alt="">[m
+[32m+[m[32m                      </div>[m
+[32m+[m[41m  [m
+[32m+[m[32m                      <div class="col-9 ms-1">[m
+[32m+[m[32m                          <h6 class="mb-0">Lionel Messi[m
+[32m+[m[32m                              <i class="bi bi-patch-check-fill text-primary ms-2"></i>[m
+[32m+[m[32m                              <i class="bi bi-twitter-x float-end text-black fs-1"></i>[m
+[32m+[m[32m                          </h6>[m
+[32m+[m[32m                          <p class="text-muted">@LionelMessi</p>[m
+[32m+[m[41m  [m
+[32m+[m[32m                      </div>[m
+[32m+[m[32m                  </div>[m
+[32m+[m[41m  [m
+[32m+[m[32m                  <div class="row">[m
+[32m+[m[32m                      <div class="col-12">[m
+[32m+[m[32m                          <p class="text-black fs-4 mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorum laboriosam incidunt nam quibusdam qui corrupti eligendi repellat, officia delectus velit nisi provident voluptatem voluptates nesciunt natus est consequatur ipsam. </p>[m
+[32m+[m[32m                          <p class="text-primary fs-4 mb-1">#TheGOAT</p>[m
+[32m+[m[32m                      </div>[m
+[32m+[m[32m                  </div>[m
+[32m+[m[41m  [m
+[32m+[m[41m  [m
+[32m+[m[32m                  <div class="row">[m
+[32m+[m[32m                      <p class="text-muted fs-6">9:30pm Aug, 2024</p>[m
+[32m+[m[32m                  </div>[m
+[32m+[m[41m  [m
+[32m+[m[32m                  <div class="row">[m
+[32m+[m[32m                      <div class="col-3">[m
+[32m+[m[32m                          <a href="#"><i class="bi bi-chat fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                      </div>[m
+[32m+[m[32m                      <div class="col-3">[m
+[32m+[m[32m                          <a href="#"><i class="bi bi-share fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                      </div>[m
+[32m+[m[32m                      <div class="col-3">[m
+[32m+[m[32m                          <a href="#"><i class="bi bi-heart fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                      </div>[m
+[32m+[m[32m                      <div class="col-3">[m
+[32m+[m[32m                          <a href="#"><i class="bi bi-arrow-bar-up fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                      </div>[m
+[32m+[m[32m                  </div>[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[41m  [m
+[32m+[m[32m      </div>[m
+[32m+[m
+[32m+[m[32m      <div class="container">[m
+[32m+[m[32m        <div class="card m-3 border-0 rounded-3 text-bg-white w-100 tweet" >[m
+[32m+[m[32m            <div class="card-body m-2">[m
+[32m+[m[32m                <div class="row">[m
+[32m+[m[32m                    <div class="col-2">[m
+[32m+[m[32m                        <img class="rounded-circle" height="50px" width="45px" src="https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/MESSI.jpg" alt="">[m
+[32m+[m[32m                    </div>[m
+[32m+[m
+[32m+[m[32m                    <div class="col-9 ms-1">[m
+[32m+[m[32m                        <h6 class="mb-0">Lionel Messi[m
+[32m+[m[32m                            <i class="bi bi-patch-check-fill text-primary ms-2"></i>[m
+[32m+[m[32m                            <i class="bi bi-twitter-x float-end text-black fs-1"></i>[m
+[32m+[m[32m                        </h6>[m
+[32m+[m[32m                        <p class="text-muted">@LionelMessi</p>[m
+[32m+[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m
+[32m+[m[32m                <div class="row">[m
+[32m+[m[32m                    <div class="col-12">[m
+[32m+[m[32m                        <p class="text-black fs-4 mt-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolorum laboriosam incidunt nam quibusdam qui corrupti eligendi repellat, officia delectus velit nisi provident voluptatem voluptates nesciunt natus est consequatur ipsam. </p>[m
+[32m+[m[32m                        <p class="text-primary fs-4 mb-1">#TheGOAT</p>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m                <div class="row">[m
+[32m+[m[32m                    <p class="text-muted fs-6">9:30pm Aug, 2024</p>[m
+[32m+[m[32m                </div>[m
+[32m+[m
+[32m+[m[32m                <div class="row">[m
+[32m+[m[32m                    <div class="col-3">[m
+[32m+[m[32m                        <a href="#"><i class="bi bi-chat fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="col-3">[m
+[32m+[m[32m                        <a href="#"><i class="bi bi-share fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="col-3">[m
+[32m+[m[32m                        <a href="#"><i class="bi bi-heart fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="col-3">[m
+[32m+[m[32m                        <a href="#"><i class="bi bi-arrow-bar-up fs-5 text-secondary"></i></a>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m          </div>[m
+[32m+[m
+[32m+[m[32m    </div>[m
+[32m+[m[41m       [m
+[32m+[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <div class="col-3 bg-light rounded-4">[m
+[32m+[m[32m          <h5 class="p-3">Tendencias para ti</h5>[m
+[32m+[m[32m          <ul class="nav flex-column">[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Bolivia</span>[m
+[32m+[m[32m                Evo Morales[m
+[32m+[m[32m                <span class="d-block mb-2">6,500 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Futbol</span>[m
+[32m+[m[32m                Bolivar[m
+[32m+[m[32m                <span class="d-block mb-2">1,200 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Tecnología</span>[m
+[32m+[m[32m                ChatGPT[m
+[32m+[m[32m                <span class="d-block mb-2">3,100 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Entretenimiento</span>[m
+[32m+[m[32m                Avengers EndGame[m
+[32m+[m[32m                <span class="d-block mb-2">5,341 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Perú</span>[m
+[32m+[m[32m                Chapter 1[m
+[32m+[m[32m                <span class="d-block mb-2">1,500 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Entretenimiento</span>[m
+[32m+[m[32m                Intensamente 2[m
+[32m+[m[32m                <span class="d-block mb-2">20,000 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Bolivia</span>[m
+[32m+[m[32m                #FuerzaVenezuela[m
+[32m+[m[32m                <span class="d-block mb-2">4,210 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li class="nav-item">[m
+[32m+[m[32m              <a class="nav-link active text-dark fs-5 fw-bold me-3 rounded-0" aria-current="page" href="#">[m
+[32m+[m[32m                <span class="d-block mb-2">Tendencia en Bolivia</span>[m
+[32m+[m[32m                #ayuda[m
+[32m+[m[32m                <span class="d-block mb-2">7,500 Tweets</span>[m
+[32m+[m[32m              </a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[41m            [m
+[32m+[m[32m          </ul>[m
+[32m+[m[32m          <div class="bg-light mt-3">[m
+[32m+[m[32m            © 2024 X Corp.[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[41m        [m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  </main>[m
+[32m+[m
+[32m+[m[32m  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"[m
+[32m+[m[32m    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"[m
+[32m+[m[32m    crossorigin="anonymous"></script>[m
+[32m+[m[32m</body>[m
+[32m+[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/MenuDesplegable/css/styles.css b/PracticasCSS/MenuDesplegable/css/styles.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5e0b7ea[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/MenuDesplegable/css/styles.css[m
+[36m@@ -0,0 +1,69 @@[m
+[32m+[m[32mheader {[m
+[32m+[m[32m    background-color: #512b79;[m
+[32m+[m[32m    color: #fff;[m
+[32m+[m[32m    padding: 10px 20px;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  nav ul {[m
+[32m+[m[32m    list-style: none;[m
+[32m+[m[32m    padding: 0;[m
+[32m+[m[32m    margin: 0;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  nav ul li {[m
+[32m+[m[32m    margin: 0 15px;[m
+[32m+[m[32m    position: relative;[m
+[32m+[m[32m    display: inline-block;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  nav ul li a {[m
+[32m+[m[32m    color: #fff;[m
+[32m+[m[32m    text-decoration: none;[m
+[32m+[m[32m    transition: color 0.3s;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  nav ul li a:hover {[m
+[32m+[m[32m    color: #72d8f1;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .material-symbols-outlined:hover {[m
+[32m+[m[32m    transform: scale(1.5);[m
+[32m+[m[32m    box-shadow: 0 0 10px 3px #72d8f1;[m
+[32m+[m[32m    border-radius: 50%;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .material-symbols-outlined {[m
+[32m+[m[32m    transition: transform 0.5s;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .submenu, .submenu2 {[m
+[32m+[m[32m    display: none;[m
+[32m+[m[32m    position: absolute;[m
+[32m+[m[32m    background-color: #333;[m
+[32m+[m[32m    padding: 10px;[m
+[32m+[m[32m    top: 25px;[m
+[32m+[m[32m    left: 0;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .dropdown:hover .submenu {[m
+[32m+[m[32m    display: block;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .submenu li {[m
+[32m+[m[32m    margin: 10px 0;[m
+[32m+[m[32m    width: 140px;[m
+[32m+[m[32m    padding: 5px;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .submenu li:hover {[m
+[32m+[m[32m    border-bottom: 1px solid #72d8f1;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .submenu a {[m
+[32m+[m[32m    color: #fff;[m
+[32m+[m[32m    text-decoration: none;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .submenu a:hover {[m
+[32m+[m[32m    color: #72d8f1;[m
+[32m+[m[32m  }[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/MenuDesplegable/index.html b/PracticasCSS/MenuDesplegable/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..96d4dce[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/MenuDesplegable/index.html[m
+[36m@@ -0,0 +1,47 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m  <head>[m
+[32m+[m[32m    <meta charset="UTF-8" />[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+[32m+[m[32m    <title>Document</title>[m
+[32m+[m[32m    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />[m
+[32m+[m[32m    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />[m
+[32m+[m[32m    <link rel="stylesheet" href="css/styles.css">[m
+[32m+[m[32m  </head>[m
+[32m+[m
+[32m+[m[32m  <body>[m
+[32m+[m[32m    <header>[m
+[32m+[m[32m      <nav>[m
+[32m+[m[32m        <ul>[m
+[32m+[m[32m          <li>[m
+[32m+[m[32m            <a href="#">[m
+[32m+[m[32m              <span class="material-symbols-outlined"> home </span></a>[m
+[32m+[m[32m          </li>[m
+[32m+[m[32m          <li class="dropdown">[m
+[32m+[m[32m            <a href="#">[m
+[32m+[m[32m              <span class="material-symbols-outlined"> design_services </span>[m
+[32m+[m[32m            </a>[m
+[32m+[m[32m            <ul class="submenu">[m
+[32m+[m[32m              <li><a href="#">Diseño Web</a></li>[m
+[32m+[m[32m              <li><a href="#">Diseño de Apps</a></li>[m
+[32m+[m[32m              <li><a href="#">Servicios en la Nube</a></li>[m
+[32m+[m[32m            </ul>[m
+[32m+[m[32m          </li>[m
+[32m+[m[32m          <li class="dropdown">[m
+[32m+[m[32m            <a href="#">[m
+[32m+[m[32m              <span class="material-symbols-outlined"> contact_support </span>[m
+[32m+[m[32m            </a>[m
+[32m+[m[32m            <ul class="submenu">[m
+[32m+[m[32m              <li><a href="#">Facebook</a></li>[m
+[32m+[m[32m              <li><a href="#">Twitter</a></li>[m
+[32m+[m[32m              <li><a href="#">Whatsapp</a></li>[m
+[32m+[m[32m            </ul>[m
+[32m+[m[32m          </li>[m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m      </nav>[m
+[32m+[m[32m    </header>[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  </body>[m
+[32m+[m[32m</html>[m
+[1mdiff --git a/PracticasCSS/Newsletter/assets/css/styles.css b/PracticasCSS/Newsletter/assets/css/styles.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cef2654[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Newsletter/assets/css/styles.css[m
+[36m@@ -0,0 +1,50 @@[m
+[32m+[m[32m* {[m
+[32m+[m[32m    font-family: "Azeret Mono", monospace;[m
+[32m+[m[32m    font-optical-sizing: auto;[m
+[32m+[m[32m    font-weight: 300;[m
+[32m+[m[32m    font-style: normal;[m[41m  [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.article{[m
+[32m+[m[32m    background-color: rgb(223, 255, 255);[m
+[32m+[m[32m    margin: 10px;[m
+[32m+[m[32m    padding: 1cm;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.newslatter{[m
+[32m+[m[32m    position: fixed;[m
+[32m+[m[32m    left: 50%;[m
+[32m+[m[32m    top: 50%;[m
+[32m+[m[32m    transform: translate(-50%, -50%);[m
+[32m+[m[32m    border-radius: 10px;[m
+[32m+[m[32m    color: rgb(213, 255, 241);[m
+[32m+[m[32m    padding: 20px;[m
+[32m+[m[32m    width: 800px;[m
+[32m+[m[32m    height: 250px;[m
+[32m+[m[32m    background: url(https://thumbs.dreamstime.com/b/newsletter-email-icon-special-blue-banner-background-newsletter-email-icon-isolated-special-blue-banner-background-abstract-123107778.jpg);[m
+[32m+[m[32m    border: 5px solid rgb(109, 212, 230);[m
+[32m+[m[32m    background-size: cover;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#enviardato{[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m    background-color: rgb(54, 252, 242);[m
+[32m+[m[32m    padding: 7px 20px;[m
+[32m+[m[32m    margin-top: 10px;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    font-size: 15px;[m
+[32m+[m[32m}[m
+[32m+[m[32m.caja{[m
+[32m+[m[32m    padding: 10px;[m
+[32m+[m[32m    font-size: 18px;[m
+[32m+[m[32m    border-radius: 10px;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.position-button{[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m    font-size: 30px;[m
+[32m+[m[32m    position: absolute;[m
+[32m+[m[32m    right: 0;[m
+[32m+[m[32m    top: 0;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/Newsletter/index.html b/PracticasCSS/Newsletter/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c9b778d[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/Newsletter/index.html[m
+[36m@@ -0,0 +1,78 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Boletin Informativo</title>[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.googleapis.com">[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>[m
+[32m+[m[32m    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Gilda+Display&display=swap" rel="stylesheet">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />[m
+[32m+[m[32m    <link rel="stylesheet" href="assets/css/styles.css">[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <header>[m
+[32m+[m[32m        <h1>Boletin Informativo</h1>[m
+[32m+[m[32m    </header>[m
+[32m+[m[32m    <main>[m
+[32m+[m
+[32m+[m[32m        <div class="newslatter">[m
+[32m+[m[32m            <span class="material-symbols-outlined position-button">[m
+[32m+[m[32m                close[m
+[32m+[m[32m            </span>[m
+[32m+[m[32m            <h2>Inscribete a Nuestro Boletin Informativo</h2>[m
+[32m+[m[32m            <p>Hola, en este apartado encontraras las ultimas noticias[m[41m [m
+[32m+[m[32m                y novedades de nuestro sitio web.[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m            <form action="#" method="post">[m
+[32m+[m[32m                <label for="nombre">Nombre: </label>[m
+[32m+[m[32m                <input class="caja" type="text" name="nombre" id="nombre" placeholder="nombre">[m
+[32m+[m[41m                [m
+[32m+[m[32m                <label for="email">Email: </label>[m
+[32m+[m[32m                <input class="caja" type="email" name="email" id="email" placeholder="email: ">[m
+[32m+[m
+[32m+[m[32m                <div>[m
+[32m+[m[32m                    <input type="submit" value="Enviar" id="enviardato">[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </form>[m
+[32m+[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m        <article class="article">[m
+[32m+[m[32m            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, similique odit deserunt quidem libero sapiente natus unde dolores quam nesciunt voluptas repellat perspiciatis dolorem autem impedit ratione. Repellendus, doloribus atque![m
+[32m+[m[32m        </article>[m
+[32m+[m[32m    </main>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/loginPlataforma/assets/css/styles.css b/PracticasCSS/loginPlataforma/assets/css/styles.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c986d2b[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/loginPlataforma/assets/css/styles.css[m
+[36m@@ -0,0 +1,98 @@[m
+[32m+[m[32m* {[m
+[32m+[m[32m    font-family: "Roboto", sans-serif;[m
+[32m+[m[32m    font-weight: 400;[m
+[32m+[m[32m    font-style: normal;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32mbody{[m
+[32m+[m[32m    background-color: rgba(54, 90, 247, 0.952);[m
+[32m+[m[32m    color: white;[m
+[32m+[m[32m    font-size: 15px;[m
+[32m+[m[32m    letter-spacing: 1px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mform{[m
+[32m+[m[32m    margin-top: 30px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.login{[m
+[32m+[m[32m    border-radius: 30px;[m
+[32m+[m[32m    margin: auto;[m
+[32m+[m[32m    height: 550px;[m
+[32m+[m[32m    width: 400px;[m
+[32m+[m[32m    padding: 70px;[m
+[32m+[m[32m    background: url(https://img.lovepik.com/background/20211021/large/lovepik-blue-e-commerce-background-image_401460895.jpg);[m
+[32m+[m[32m    background-size: cover;[m
+[32m+[m[32m    box-shadow: 0px 30px 60px -5px black;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mh2{[m
+[32m+[m[32m    border-bottom: 2px solid white;[m
+[32m+[m[32m    padding-left: 10px;[m
+[32m+[m[32m    font-size: 28px;[m
+[32m+[m[32m    text-transform: uppercase;[m
+[32m+[m[32m    padding-bottom: 5px;[m
+[32m+[m[32m    letter-spacing: 2px;[m
+[32m+[m[32m    font-weight: 350;[m
+[32m+[m[32m    margin-left: 20px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.campo-email, .campo-password {[m
+[32m+[m[32m    width: 90%;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    padding-top: 10px;[m
+[32m+[m[32m    padding-bottom: 10px;[m
+[32m+[m[32m    padding-left: 20px;[m
+[32m+[m[32m    padding-right: 20px;[m
+[32m+[m[32m    border-radius: 20px;[m
+[32m+[m[32m    background-color: rgb(255, 233, 250);[m
+[32m+[m[32m    border: 2px solid rgb(238, 78, 139);[m
+[32m+[m[32m    margin-top: 10px;[m
+[32m+[m[32m    transition: all 0.5s;[m
+[32m+[m[32m    font-size: 15px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.campo-email:focus, .campo-password:focus {[m
+[32m+[m[32m    outline: 0;[m
+[32m+[m[32m    border: 2px solid rgba(255, 255, 255, 0.5);[m
+[32m+[m[32m    border-radius: 20px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mlabel{[m
+[32m+[m[32m    margin-top: 25px;[m
+[32m+[m[32m    display: block;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.boton-ingresar {[m
+[32m+[m[32m    font-size: 15px;[m
+[32m+[m[32m    letter-spacing: 3px;[m
+[32m+[m[32m    background-color: rgb(42, 71, 167);[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m[32m    height: 35px;[m
+[32m+[m[32m    border-radius: 20px;[m
+[32m+[m[32m    border: none;[m
+[32m+[m[32m    color: white;[m
+[32m+[m[32m    text-transform: uppercase;[m
+[32m+[m[32m    transition: all 0.5s;[m
+[32m+[m[32m}[m
+[32m+[m[32m.boton-ingresar:hover {[m
+[32m+[m[32m    background: rgb(17, 37, 102);[m
+[32m+[m[32m    cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mhr{[m
+[32m+[m[32m    margin-top: 50px;[m
+[32m+[m[32m    border: 1px solid white;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32ma{[m
+[32m+[m[32m    line-height: 30px;[m
+[32m+[m[32m    text-align: center;[m
+[32m+[m[32m    color: white;[m
+[32m+[m[32m    text-decoration: none;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.sesion-activa {[m
+[32m+[m[32m    display: inline-block;[m
+[32m+[m[32m    margin-bottom: 25px;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasCSS/loginPlataforma/index.html b/PracticasCSS/loginPlataforma/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a6b16cc[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasCSS/loginPlataforma/index.html[m
+[36m@@ -0,0 +1,33 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Login Plataforma Ecommerce</title>[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.googleapis.com">[m
+[32m+[m[32m    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>[m
+[32m+[m[32m    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Gilda+Display&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">[m
+[32m+[m[32m    <link rel="stylesheet" href="assets/css/styles.css">[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <div class="login">[m
+[32m+[m[32m        <h2>Iniciar Sesión - Plataforma Ecommerce</h2>[m
+[32m+[m[32m        <form action="/" method="get">[m
+[32m+[m[32m            <label for="correo">Correo: </label>[m
+[32m+[m[32m            <input class="campo-email" type="email" name="correo" id="correo" validate>[m
+[32m+[m
+[32m+[m[32m            <label for="password">Contraseña: </label>[m
+[32m+[m[32m            <input class="campo-password" type="password" name="password" id="password">[m
+[32m+[m[41m            [m
+[32m+[m[32m            <input type="checkbox" name="sesion-activa" id="sesion-activa">[m
+[32m+[m[32m            <label class="sesion-activa" for="sesion-activa">Mantener la sesión activa?</label>[m
+[32m+[m
+[32m+[m[32m            <input class="boton-ingresar" type="submit" value="Ingresar">[m
+[32m+[m
+[32m+[m[32m            <hr/>[m
+[32m+[m[32m            <a href="#">Olvidaste la contraseña?</a>[m
+[32m+[m[32m        </form>[m
+[32m+[m[32m    </div>[m
+[32m+[m[41m    [m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasHtml/Catalogo.rar b/PracticasHtml/Catalogo.rar[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cc923b9[m
+Binary files /dev/null and b/PracticasHtml/Catalogo.rar differ
+[1mdiff --git a/PracticasHtml/Catalogo/index.html b/PracticasHtml/Catalogo/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4e53854[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasHtml/Catalogo/index.html[m
+[36m@@ -0,0 +1,81 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Catalogo</title>[m
+[32m+[m[32m    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body bgcolor="pink">[m
+[32m+[m[32m    <div align="center">[m
+[32m+[m[32m    <header>[m
+[32m+[m[32m        <h1>Tienda Deportiva</h1>[m
+[32m+[m[32m        <img height="70" src="https://fairplaybo.vtexassets.com/assets/vtex/assets-builder/fairplaybo.fairplay-theme/1.0.5/imgs/logo-fairplaybo-mobile___67b3f642aee53f33f92b6aa0f5037144.png" alt="">[m
+[32m+[m[32m    </header>[m
+[32m+[m[32m    <main>[m
+[32m+[m[41m        [m
+[32m+[m[32m        <section>[m
+[32m+[m[32m            <h2>Catalogo de Venta</h2>[m
+[32m+[m[32m            <table cellpadding="5" bgcolor="white" border="1" cellspacing="5">[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <th>Articulo</th>[m
+[32m+[m[32m                    <th>Precio</th>[m
+[32m+[m[32m                    <th>Producto</th>[m
+[32m+[m[32m                    <th>Comprar</th>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <td>UA ZAP Charged Breeze</td>[m
+[32m+[m[32m                    <td>Bs.390</td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <img height="200px" src="https://fairplaybo.vtexassets.com/arquivos/ids/161668-300-auto?v=638094768900230000&width=300&height=auto&aspect=true" alt="">[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <button><i class="bi bi-cart-check"></i> Agregar al Carrito</button>[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <td>UA Polera M Sportstyle</td>[m
+[32m+[m[32m                    <td>Bs.150</td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <img height="200px" src="https://fairplaybo.vtexassets.com/arquivos/ids/414338-1200-auto?v=638557211172400000&width=1200&height=auto&aspect=true" alt="">[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <button><i class="bi bi-cart-check"></i> Agregar al Carrito</button>[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m                <tr>[m
+[32m+[m[32m                    <td>Chuck Taylor ALL STAR Platform HI</td>[m
+[32m+[m[32m                    <td>Bs.780</td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <img height="200px" src="https://fairplaybo.vtexassets.com/arquivos/ids/303272-1200-auto?v=638322050798570000&width=1200&height=auto&aspect=true" alt="">[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                    <td>[m
+[32m+[m[32m                        <button><i class="bi bi-cart-check"></i> Agregar al Carrito</button>[m
+[32m+[m[32m                    </td>[m
+[32m+[m[32m                </tr>[m
+[32m+[m[32m            </table>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        <section>[m
+[32m+[m[32m            <hr>[m
+[32m+[m[32m            <h2>Visitanos en nuestra tienda</h2>[m
+[32m+[m[32m            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.165983620867!2d-68.07917283856817!3d-16.54186830062628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f213a1eb083d9%3A0xa51f9a423b88d0c5!2sFair%20Play-%20yuth!5e0!3m2!1ses!2sbo!4v1721926516796!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>[m
+[32m+[m[32m        </section>[m
+[32m+[m[41m    [m
+[32m+[m[32m    </main>[m
+[32m+[m[32m</div>[m
+[32m+[m[32m    <footer>[m
+[32m+[m[32m        <ul>[m
+[32m+[m[32m            <li>[m
+[32m+[m[32m                Email: <a href="mailto:alcanes2001@gmail.com"> alcanes2001@gmail.com</a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m            <li>[m
+[32m+[m[32m                Whatsapp: <a href="tlf:60630730">60630730</a>[m
+[32m+[m[32m            </li>[m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m        <p>© Fair Play 2022. Todos los derechos reservados</p>[m
+[32m+[m[32m    </footer>[m
+[32m+[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasHtml/Practicas.rar b/PracticasHtml/Practicas.rar[m
+[1mnew file mode 100644[m
+[1mindex 0000000..54ed022[m
+Binary files /dev/null and b/PracticasHtml/Practicas.rar differ
+[1mdiff --git a/PracticasHtml/Presentacion/presentacion.html b/PracticasHtml/Presentacion/presentacion.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..66e2b8a[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasHtml/Presentacion/presentacion.html[m
+[36m@@ -0,0 +1,34 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Web de Presentación</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <h1>Web de Presentación</h1>[m
+[32m+[m[32m    <h2>Nestor Alejandro Alvarez Castillo</h2>[m
+[32m+[m[32m    <img height="250px" width="250px" src="https://scontent.flpb2-1.fna.fbcdn.net/v/t39.30808-6/296341363_2303818313116707_5971214150922562296_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hzP_K0M1AP4Q7kNvgHJNEHp&_nc_ht=scontent.flpb2-1.fna&oh=00_AYAx1bTNlyRvwyVeTOo6yDRRIbHubGLv-TPYKZ-vUJt5mA&oe=669C7926" alt="">[m
+[32m+[m[32m    <p>Hola mi nombre es Nes, soy estudiante de la carrera de[m[41m [m
+[32m+[m[32m        Informática de la Universidad Mayor[m
+[32m+[m[32m        de San Andrés en Bolivia, me gusta cantar, tocar guitarra,[m[41m [m
+[32m+[m[32m        jugar deportes en especial futbol y voleibol.[m
+[32m+[m[32m    </p>[m
+[32m+[m
+[32m+[m[32m    <h2>Ciudad de La Paz, Bolivia</h2>[m
+[32m+[m[32m    <img height="450px" width="650px" src="https://www.cideu.org/wp-content/uploads/2019/12/la-paz-3-1.jpg" alt="">[m
+[32m+[m[32m    <p>Actualmente resido en la ciudad de La Paz.</p>[m
+[32m+[m
+[32m+[m[32m    <h2>Mi plato favorito</h2>[m
+[32m+[m[32m    <img height="350px" width="450px" src="https://www.cocina-boliviana.com/base/stock/Recipe/ranga-ranga-tarijena/ranga-ranga-tarijena_web.jpg.webp" alt="">[m
+[32m+[m[32m    <p>La ranga es mi plato favorito desde que tengo 6 años, pero[m[41m [m
+[32m+[m[32m        solo me gusta la que hace mi abuela.[m
+[32m+[m[32m    </p>[m
+[32m+[m
+[32m+[m[32m    <h2>Mis pasatiempos</h2>[m
+[32m+[m[32m    <img height="350px" width="450px" src="https://akamai.sscdn.co/gcs/cifra-blog/es/wp-content/uploads/2022/09/9ec7fdf-cantante.jpg" alt="">[m
+[32m+[m[32m    <img height="350px" width="450px" src="https://concepto.de/wp-content/uploads/2016/04/voleibol-2-e1547769267299.jpg" alt="">[m
+[32m+[m[32m    <p>Mis pasatiempos favoritos son cantar y hacer deporte en general, pero mis deportes favoritos son el futbol y el voleibol.</p>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+[32m+[m
+[1mdiff --git a/PracticasHtml/RedSocial.rar b/PracticasHtml/RedSocial.rar[m
+[1mnew file mode 100644[m
+[1mindex 0000000..15de385[m
+Binary files /dev/null and b/PracticasHtml/RedSocial.rar differ
+[1mdiff --git a/PracticasHtml/RedSocial/index.html b/PracticasHtml/RedSocial/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6911e1a[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasHtml/RedSocial/index.html[m
+[36m@@ -0,0 +1,99 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Mi Red Social</title>[m
+[32m+[m[32m    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <div style="background-color: rgb(160, 245, 248); color: rgb(3, 3, 3)">[m
+[32m+[m[32m        <header style="padding: 1cm; padding-top: 0.5cm;">[m
+[32m+[m[32m            <h1>Mi Red Social</h1>[m
+[32m+[m[32m            <div style="padding: 0.2cm; overflow: hidden; padding-bottom: 0cm;">[m
+[32m+[m[32m                <nav>[m
+[32m+[m[32m                    <a href="inicio.html">Inicio</a>[m
+[32m+[m[32m                    <a href="">Perfil</a>[m
+[32m+[m[32m                    <a href="">Amigos</a>[m
+[32m+[m[32m                    <a href="">Chat</a>[m
+[32m+[m[32m                </nav>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m        </header>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <main>[m
+[32m+[m[32m        <section style="padding: 3cm; padding-top: 1cm;">[m
+[32m+[m[32m            <img src="https://scontent.flpb2-1.fna.fbcdn.net/v/t39.30808-1/296341363_2303818313116707_5971214150922562296_n.jpg?stp=dst-jpg_p200x200&_nc_cat=100&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=1rx0EkolwXYQ7kNvgEhT0u_&_nc_ht=scontent.flpb2-1.fna&oh=00_AYCQFPcmBdD82AeVrizrs7FpPUweBtsho5Ta4uh0-p9U3A&oe=66B0D3A8" alt="">[m
+[32m+[m[32m            <br><br>[m
+[32m+[m[32m            <h2>Mi Perfil</h2>[m
+[32m+[m[32m            <h3>Nestor Alejandro Alvarez Castillo</h3><br>[m
+[32m+[m[32m            <p>Mi nombre es Nestor Alejandro Alvarez Castillo[m
+[32m+[m[32m                soy estudiante de la carrera de Informatica de la[m[41m [m
+[32m+[m[32m                Universidad Mayor de San Andres de La Paz - Bolivia.[m
+[32m+[m[32m                Naci el 28 de diciembre de 2001 en La Paz, Bolivia.[m
+[32m+[m[32m                Mis hoobies favoritos son cantar, tocar guitarra y jugar deportes como el futbol y el voleibol.[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m            <p>Espero con este Bootcamp de Dojo FullStack aprender demasiado y salir muy bien como profesional.[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m            <div class="table" style="padding: 2cm; padding-bottom: 0.5cm; padding-top: 0.5cm;">[m
+[32m+[m[32m                <table class="table table-dark" border="5" align="center">[m
+[32m+[m[32m                    <tr>[m
+[32m+[m[32m                        <th>NOMBRE</th>[m
+[32m+[m[32m                        <th>EMAIL</th>[m
+[32m+[m[32m                        <th>TELEFONO</th>[m
+[32m+[m[32m                        <th>DIRECCION</th>[m
+[32m+[m[32m                    </tr>[m
+[32m+[m[32m                    <tr>[m
+[32m+[m[32m                        <td>Nestor Alejandro Alvarez Castillo </td>[m
+[32m+[m[32m                        <td>alcanes2001@gmail.com</td>[m
+[32m+[m[32m                        <td>60630730</td>[m
+[32m+[m[32m                        <td>Av. Muñoz Reyes Cota Cota C.28</td>[m
+[32m+[m[32m                    </tr>[m
+[32m+[m[32m                </table>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <a class="btn btn-primary" href="#" role="button">Descargar CV</a>[m
+[32m+[m[32m        </section>[m
+[32m+[m[32m        <section style="padding: 3cm; padding-top: 0cm;">[m
+[32m+[m[32m            <hr>[m
+[32m+[m[32m            <h2>Visitame</h2>[m
+[32m+[m[32m            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7649.419256185416!2d-68.06453115138969!3d-16.540750692193967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbo!4v1722630104443!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>[m[41m    [m
+[32m+[m[32m        </section>[m
+[32m+[m[32m    </main>[m
+[32m+[m[32m    <div style="background-color: rgb(160, 245, 248); color: rgb(3, 3, 3)">[m
+[32m+[m[32m        <footer style="padding: 1cm; padding-top: 0.5cm;">[m
+[32m+[m[32m            <h1>Contactanos</h1>[m
+[32m+[m[32m            <fieldset>[m
+[32m+[m[32m                <legend>Datos del Cliente</legend>[m
+[32m+[m[41m    [m
+[32m+[m[32m                <div class="input-group mb-3">[m
+[32m+[m[32m                    <div class="input-group-prepend">[m
+[32m+[m[32m                      <span class="input-group-text" id="inputGroup-sizing-default">Nombre: </span>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">[m
+[32m+[m[32m                </div>[m
+[32m+[m[41m    [m
+[32m+[m[32m                <div class="input-group mb-3">[m
+[32m+[m[32m                    <div class="input-group-prepend">[m
+[32m+[m[32m                      <span class="input-group-text">Correo: </span>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <input type="text" class="form-control" aria-label="correo">[m
+[32m+[m[32m                    <div class="input-group-append">[m
+[32m+[m[32m                      <span class="input-group-text">@gmail.com</span>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                  </div>[m
+[32m+[m
+[32m+[m[32m                <div class="input-group">[m
+[32m+[m[32m                    <div class="input-group-prepend">[m
+[32m+[m[32m                      <span class="input-group-text">Mensaje:  </span>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <textarea class="form-control" aria-label="Mensaje"></textarea>[m
+[32m+[m[32m                </div>[m
+[32m+[m[41m                [m
+[32m+[m[32m              </fieldset>[m
+[32m+[m[32m              <br>[m
+[32m+[m[32m              <a class="btn btn-success" href="#" role="button">Enviar</a>[m
+[32m+[m[41m        [m
+[32m+[m[41m              [m
+[32m+[m[32m        </footer>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasHtml/WebNegocio.rar b/PracticasHtml/WebNegocio.rar[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7cb3570[m
+Binary files /dev/null and b/PracticasHtml/WebNegocio.rar differ
+[1mdiff --git a/PracticasHtml/WebNegocio/acerca.html b/PracticasHtml/WebNegocio/acerca.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..47f59c4[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasHtml/WebNegocio/acerca.html[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Acerca de MESH</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <h1>Acerca de la TIENDA DE ROPA MESH</h1> <br>[m
+[32m+[m[32m    <p>MESH : Distribuidor Internacional Autorizado de Mattelsa S.A.S para Bolivia.</p> <br>[m
+[32m+[m[32m    <a href="https://meshbolivia.com/" target="_blank">Ir a la tienda de MESH</a></br><br>[m
+[32m+[m[32m    <br>[m
+[32m+[m[32m    <a href="index.html">Inicio</a>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasHtml/WebNegocio/contacto.html b/PracticasHtml/WebNegocio/contacto.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a2121f5[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasHtml/WebNegocio/contacto.html[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Contacto Tienda</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <h1>Contacto TIENDA DE ROPA MESH</h1> <br>[m
+[32m+[m[32m    <p>Pagina de Contacto</p><br>[m
+[32m+[m[32m    <p>Dirección: Av Muñoz Reyes Z/Cota Cota C.28 </p> <br>[m
+[32m+[m[32m    <a href="gmail.com" target="_blank">hola@gmail.com</a></br><br>[m
+[32m+[m[32m    <a href="https://www.facebook.com/MeshBolivia/" target="_blank">Facebook MESH</a><br><br>[m
+[32m+[m[32m    <a href="https://api.whatsapp.com/send/?phone=59175983353&text=%C2%A1+Hola+%21&type=phone_number&app_absent=0" target="_blank">Whatsapp MESH</a>[m
+[32m+[m[32m    <br><br>[m
+[32m+[m[32m    <a href="index.html">Inicio</a>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasHtml/WebNegocio/index.html b/PracticasHtml/WebNegocio/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..79f68b8[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasHtml/WebNegocio/index.html[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <title>Tienda de Ropa "MESH - Bolivia"</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <img width="200" height="60" src="https://meshbolivia.com/wp-content/uploads/2020/08/cropped-mesweb-3.png" alt="">[m
+[32m+[m[32m    <h1>Tienda de Ropa MESH</h1> <hr>[m
+[32m+[m[32m    <a href="index.html">Inicio</a>[m
+[32m+[m[32m    <a href="contacto.html">Contacto</a>[m
+[32m+[m[32m    <a href="acerca.html">Acerca</a>[m
+[32m+[m[32m    <br/>[m[41m [m
+[32m+[m[32m    <p>Bienvenido a la Página Web de MESH - BOLIVIA</p>[m
+[32m+[m[32m    <img width="400" src="https://meshbolivia.com/wp-content/uploads/2024/02/398606310_718888306940136_574508222922520868_n-820x1024.jpg" alt="">[m
+[32m+[m
+[32m+[m[32m    <p><b>Nuestras prendas: </b></p>[m
+[32m+[m[32m    <ul>[m
+[32m+[m[32m        <li>Poleras</li>[m
+[32m+[m[32m        <li>Sudaderas</li>[m
+[32m+[m[32m        <li>Deportivos</li>[m
+[32m+[m[32m        <li>Pantalones</li>[m
+[32m+[m[32m        <li>Tenis y Zapatos</li>[m
+[32m+[m[32m    </ul>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/PracticasHtml/WebPedidos.rar b/PracticasHtml/WebPedidos.rar[m
+[1mnew file mode 100644[m
+[1mindex 0000000..adb3d0b[m
+Binary files /dev/null and b/PracticasHtml/WebPedidos.rar differ
+[1mdiff --git a/PracticasHtml/WebPedidos/index.html b/PracticasHtml/WebPedidos/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7464cbb[m
+[1m--- /dev/null[m
+[1m+++ b/PracticasHtml/WebPedidos/index.html[m
+[36m@@ -0,0 +1,107 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m  <head>[m
+[32m+[m[32m    <meta charset="UTF-8" />[m
+[32m+[m[32m    <meta http-equiv="X-UA-Compatible" content="IE=edge" />[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+[32m+[m[32m    <title>Pollos Copacabana Delivery</title>[m
+[32m+[m[32m  </head>[m
+[32m+[m[32m  <body>[m
+[32m+[m[32m    <header>[m
+[32m+[m[32m      <img[m
+[32m+[m[32m        height="100px"[m
+[32m+[m[32m        src="https://www.la-razon.com/wp-content/uploads/2023/04/01/20/image.png"[m
+[32m+[m[32m      />[m
+[32m+[m[32m      <h1>Pollos Copacabana Delivery</h1>[m
+[32m+[m[32m    </header>[m
+[32m+[m
+[32m+[m[32m    <main>[m
+[32m+[m[32m      <section>[m
+[32m+[m[32m        <form method="POST" action="https://eolz0b8n6z4f5sw.m.pipedream.net">[m
+[32m+[m[32m          <fieldset>[m
+[32m+[m[32m            <legend>Datos del Cliente</legend>[m
+[32m+[m[32m            <label for="firstName"> Nombre:</label>[m
+[32m+[m[32m            <input type="text" name="firstName" id="firstName" placeholder="ingresa tu nombre" />[m
+[32m+[m
+[32m+[m[32m            <label for="email">Celular:</label>[m
+[32m+[m[32m            <input type="text" name="phone" placeholder="ingresa tu Celular" id="phone"/>[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="lastname">Apellido:</label>[m
+[32m+[m[32m            <input type="text" name="lastname" id="lastname" placeholder="ingresa tu apellido" />[m
+[32m+[m
+[32m+[m[32m            <label for="email">Email:</label>[m[41m [m
+[32m+[m[32m            <input type="email" name="email" placeholder="ingresa tu Email" id="email" />[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="lastname">Ciudad:</label>[m
+[32m+[m[32m            <input type="text" name="city" id="city" placeholder="Ciudad" />[m
+[32m+[m
+[32m+[m[32m          </fieldset>[m
+[32m+[m
+[32m+[m[32m          <br />[m
+[32m+[m
+[32m+[m[32m          <fieldset>[m
+[32m+[m[32m            <label for="favorito"><b>Selecciona tu tipo de presa:</b></label>[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="cuarto2">Combo Cuarto</label>[m
+[32m+[m[32m            <input type="radio" name="tipo_presa" value="cuarto" id="cuarto" />[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="fiesta2">Combo Fiesta</label>[m
+[32m+[m[32m            <input type="radio" name="tipo_presa" value="fiesta" id="fiesta" />[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="trio2">Combo Trio</label>[m
+[32m+[m[32m            <input type="radio" name="tipo_presa" value="trio" id="trio" /> <br />[m
+[32m+[m
+[32m+[m[32m            <br />[m
+[32m+[m[32m            <label for="favorito"><b>Selecciona el tamaño de las papas y del refresco:</b></label>[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="cuarto2">Pequeño</label>[m
+[32m+[m[32m            <input type="radio" name="tamano_pizza" value="pequeno" id="pequeno" />[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="fiesta2">Mediano</label>[m
+[32m+[m[32m            <input type="radio" name="tamano_pizza" value="mediano" id="mediano" />[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="trio2">Grande</label>[m
+[32m+[m[32m            <input type="radio" name="tamano_pizza" value="grande" id="grande" /> <br />[m
+[32m+[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="favorito"><b>Selecciona Extras:</b></label>[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="cuarto2">Arroz</label>[m
+[32m+[m[32m            <input type="checkbox" name="extras" value="arroz" id="arroz" />[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="fiesta2">Ensalada</label>[m
+[32m+[m[32m            <input type="checkbox" name="extras" value="ensalada" id="ensalada" />[m
+[32m+[m[32m            <br />[m
+[32m+[m
+[32m+[m[32m            <label for="trio2">Postre</label>[m
+[32m+[m[32m            <input type="checkbox" name="extras" value="postre" id="postre" />[m
+[32m+[m[32m            <br />[m
+[32m+[m[32m          </fieldset>[m
+[32m+[m
+[32m+[m[32m          <br />[m
+[32m+[m
+[32m+[m[32m          <label for="fecha">Selecciona la hora de entrega</label>[m
+[32m+[m[32m          <input type="time" name="fecha" id="fecha" />[m
+[32m+[m
+[32m+[m[32m          <br />[m
+[32m+[m[32m          <textarea name="mensaje" rows="5" cols="39">envianos un comentario sobre el pedido..[m
+[32m+[m[32m          </textarea>[m
+[32m+[m
+[32m+[m[32m          <br />[m
+[32m+[m[32m          <input type="submit" value="Enviar" />[m
+[32m+[m[32m        </form>[m
+[32m+[m[32m      </section>[m
+[32m+[m[32m    </main>[m
+[32m+[m[32m  </body>[m
+[32m+[m[32m</html>[m
